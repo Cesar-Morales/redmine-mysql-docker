@@ -1,8 +1,8 @@
 # REDMINE - MYSQL - DOCKER
 
-### Create containers
+## Create containers
 
-## Case 1
+### Case 1
 
 ### Running Redmine with a database server.
 
@@ -10,13 +10,13 @@
 >
 >     - MySQL
 >
->           $ docker run -d --name some-mysql --network some-network -e MYSQL_USER=redmine -e MYSQL_PASSWORD=secret -e MYSQL_DATABASE=redmine -e MYSQL_RANDOM_ROOT_PASSWORD=1 mysql:5.7
+>           docker run -d --name some-mysql --network some-network -e MYSQL_USER=redmine -e MYSQL_PASSWORD=secret -e MYSQL_DATABASE=redmine -e MYSQL_RANDOM_ROOT_PASSWORD=1 mysql:5.7
 >
 > 2.  Start redmine
 >
->     $ docker run -d --name some-redmine --network some-network -e REDMINE_DB_MYSQL=some-mysql -e REDMINE_DB_USERNAME=redmine -e REDMINE_DB_PASSWORD=secret redmine
+>         docker run -d --name some-redmine --network some-network -e REDMINE_DB_MYSQL=some-mysql -e REDMINE_DB_USERNAME=redmine -e REDMINE_DB_PASSWORD=secret redmine
 
-## Case 2
+### Case 2
 
 ### Running Redmine and Mysql via docker-compose
 
@@ -43,13 +43,15 @@
 >                  MYSQL_ROOT_PASSWORD: example
 >                  MYSQL_DATABASE: redmine
 >
-> ### And run
+> ### and Run
 >
 >        docker-compose -f stack.yml up
 
 ### Wait for it to initialize completely, and visit http://localhost:8080.
 
-### REST Client
+----
+
+## REST Client
 
 Example
 
